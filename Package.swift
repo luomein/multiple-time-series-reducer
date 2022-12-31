@@ -23,7 +23,8 @@ let package = Package(
         .package(url: "https://github.com/pointfreeco/swift-case-paths", from: "0.10.0"),
         .package(url: "https://github.com/pointfreeco/swift-identified-collections", from: "0.4.1"),
         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.47.2"),
-        .package(url: "https://github.com/pointfreeco/swiftui-navigation", from: "0.4.5")
+        .package(url: "https://github.com/pointfreeco/swiftui-navigation", from: "0.4.5"),
+        .package(url: "https://github.com/luomein/luomein-swift-basic-tools", from: "1.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -33,7 +34,8 @@ let package = Package(
             dependencies: [
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 .product(name: "SwiftUINavigation", package: "swiftui-navigation"),
-                .product(name: "IdentifiedCollections", package: "swift-identified-collections")
+                .product(name: "IdentifiedCollections", package: "swift-identified-collections"),
+                .product(name: "LuomeinSwiftBasicTools", package: "luomein-swift-basic-tools")
             ]),
         .testTarget(
             name: "MultipleTimeSeriesReducerTests",
