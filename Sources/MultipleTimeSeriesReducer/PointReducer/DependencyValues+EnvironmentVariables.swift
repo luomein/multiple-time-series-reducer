@@ -11,8 +11,10 @@ import SwiftUI
 import ComposableArchitecture
 
 public struct EnvironmentVariables : Equatable {
-    var canvasSize : CGSize = .zero
-    
+    public var canvasSize : CGSize = .zero
+    public init(canvasSize: CGSize = .zero) {
+        self.canvasSize = canvasSize
+    }
 }
 extension EnvironmentVariables: DependencyKey {
   public static let liveValue = EnvironmentVariables()
@@ -21,7 +23,7 @@ extension EnvironmentVariables: DependencyKey {
 
 
 extension DependencyValues {
-  var environmentVariables: EnvironmentVariables {
+  public var environmentVariables: EnvironmentVariables {
     get { self[EnvironmentVariables.self] }
     set { self[EnvironmentVariables.self] = newValue }
   }

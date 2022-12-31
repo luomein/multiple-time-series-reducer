@@ -11,6 +11,9 @@ import SwiftUI
 
 public struct PointReducer: ReducerProtocol {
     @Dependency(\.environmentVariables) var environmentVariables
+    public init(){
+        
+    }
     public struct State: Equatable, Identifiable{
         public var point : CGPoint
         public var size : Double
@@ -19,7 +22,14 @@ public struct PointReducer: ReducerProtocol {
         public var popoverEditingState: PopoverEditingState?
         public var environmentVariables: EnvironmentVariables = .init()
         
-        
+        public init(point: CGPoint, size: Double, color: Color, id: UUID, popoverEditingState: PopoverEditingState? = nil, environmentVariables: EnvironmentVariables = .init()) {
+            self.point = point
+            self.size = size
+            self.color = color
+            self.id = id
+            self.popoverEditingState = popoverEditingState
+            self.environmentVariables = environmentVariables
+        }
         
         public struct PopoverEditingState: Equatable{
             public var point : CGPoint
